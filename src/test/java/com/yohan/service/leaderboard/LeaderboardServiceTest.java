@@ -3,11 +3,10 @@ package com.yohan.service.leaderboard;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.yohan.service.leaderboard.internal.LeaderboardEntry;
 import com.yohan.service.leaderboard.internal.LeaderboardEntryRepository;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -17,8 +16,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class LeaderboardServiceTest {
 
-  @Mock
-  LeaderboardEntryRepository repository;
+  @Mock LeaderboardEntryRepository repository;
   @InjectMocks LeaderboardService service;
 
   @Test

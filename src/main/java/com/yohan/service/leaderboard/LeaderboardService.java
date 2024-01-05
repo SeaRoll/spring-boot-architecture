@@ -1,8 +1,7 @@
 package com.yohan.service.leaderboard;
 
-import java.util.List;
-
 import com.yohan.service.leaderboard.internal.LeaderboardEntryRepository;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
