@@ -2,15 +2,18 @@ package com.yohan.service.leaderboard;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import com.yohan.service.SpringBootComponentTest;
 import java.util.List;
+
+import com.yohan.service.leaderboard.internal.LeaderboardEntry;
+import com.yohan.service.leaderboard.internal.LeaderboardEntryRepository;
 import org.hamcrest.core.Is;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class LeaderboardEntryRepositoryIntegrationTest extends SpringBootComponentTest {
-  @Autowired LeaderboardEntryRepository repository;
+class LeaderboardEntryRepositoryIntegrationTest extends LeaderboardComponentTest {
+  @Autowired
+  LeaderboardEntryRepository repository;
 
   @AfterEach
   void tearDown() {

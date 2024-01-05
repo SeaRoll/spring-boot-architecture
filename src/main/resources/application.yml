@@ -14,3 +14,8 @@ spring:
   threads:
     virtual:
       enabled: true
+
+org:
+  springframework:
+    modulith:
+      test: DEBUG

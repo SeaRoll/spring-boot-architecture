@@ -2,6 +2,8 @@ package com.yohan.service.leaderboard;
 
 import static com.yohan.service.Application.API_VERSION_1;
 
+import com.yohan.service.leaderboard.LeaderboardEntryDto;
+import com.yohan.service.leaderboard.LeaderboardService;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

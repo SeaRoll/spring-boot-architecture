@@ -1,5 +1,6 @@
 package com.yohan.service.leaderboard;
 
+import com.yohan.service.leaderboard.internal.LeaderboardEntry;
 import lombok.Builder;
 import lombok.Value;
 

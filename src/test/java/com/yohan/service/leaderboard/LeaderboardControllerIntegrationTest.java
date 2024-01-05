@@ -6,17 +6,20 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.yohan.service.SpringBootComponentTest;
 import java.util.List;
+
+import com.yohan.service.leaderboard.internal.LeaderboardEntry;
+import com.yohan.service.leaderboard.internal.LeaderboardEntryRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.MockMvc;
 
-public class LeaderboardControllerIntegrationTest extends SpringBootComponentTest {
+class LeaderboardControllerIntegrationTest extends LeaderboardComponentTest {
 
   @Autowired private MockMvc mockMvc;
-  @Autowired LeaderboardEntryRepository repository;
+  @Autowired
+  LeaderboardEntryRepository repository;
 
   @AfterEach
   void tearDown() {

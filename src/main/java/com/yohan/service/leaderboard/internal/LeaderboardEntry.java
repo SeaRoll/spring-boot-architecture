@@ -1,4 +1,4 @@
-package com.yohan.service.leaderboard;
+package com.yohan.service.leaderboard.internal;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

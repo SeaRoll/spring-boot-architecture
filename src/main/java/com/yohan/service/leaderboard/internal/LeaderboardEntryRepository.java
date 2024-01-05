@@ -1,4 +1,4 @@
-package com.yohan.service.leaderboard;
+package com.yohan.service.leaderboard.internal;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
