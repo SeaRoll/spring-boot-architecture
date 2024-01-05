@@ -1,10 +1,9 @@
-# G-Loot code test for backend developers
+# Spring Boot Architecture
 
 ## Things you will need
 
-* Git
-* Java 17
-* A code editor
+* Java 21
+* IntelliJ IDEA
 
 ## General info
 
@@ -19,24 +18,6 @@
     * On Windows:
       `./mvnw.cmd clean verify`
 
-## Test
-
-This is a sample spring boot which currently only offers a single GET endpoint at `/api/v1/leaderboard`
-which will return a leaderboard consisting of entities representing players and their score.
-
-We expect you to perform the following list of tasks:
-
-* Extend functionality
-    * Add support for multiple leaderboards
-    * Add new API endpoints for:
-        * For fetching the position of a user for a specific leaderboard
-        * Setting score for a user in a leaderboard
-    * Write tests for the code you add
-* Refactor the existing method in LeaderboardService
-
-## Sending in your submission
-
-Clone the repository, make your changes and e-mail an archive with the result
-to [codetest@gloot.com](mailto:codetest@gloot.com?subject=Spring%20Boot%20Code%20Test)
-
-Including a commit history is a plus which would showcase your thought process
+## Pull requests requirements
+* run `./mvnw fmt:format` before pushing
+* run `./mvnw clean verify` before pushing

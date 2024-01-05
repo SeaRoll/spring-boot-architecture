@@ -1,11 +1,9 @@
 package com.yohan.service.leaderboard;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
 
 import com.yohan.service.SpringBootComponentTest;
 import java.util.List;
-
 import org.hamcrest.core.Is;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
