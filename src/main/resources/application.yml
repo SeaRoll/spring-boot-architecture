@@ -14,3 +14,6 @@ spring:
   threads:
     virtual:
       enabled: true
+  mqtt:
+    broker-port: 1883
+    broker-host: localhost
