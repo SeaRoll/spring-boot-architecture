@@ -1,5 +1,9 @@
 # Spring Boot Architecture
 
+A very simple example of a Spring Boot application
+that uses a layered architecture, JWT generation & authentication per SCOPE,
+automatic local development & testing setup with testcontainers.
+
 ## Things you will need
 
 * Java 21
