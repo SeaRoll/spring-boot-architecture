@@ -19,5 +19,13 @@
       `./mvnw.cmd clean verify`
 
 ## Pull requests requirements
+
 * run `./mvnw fmt:format` before pushing
 * run `./mvnw clean verify` before pushing
+
+## Running the application locally
+
+Navigate to the root of test folder,
+And then run the `LocalDevApplication` class.
+This will start all necessary docker containers
+and run the application locally.

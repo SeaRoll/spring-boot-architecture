@@ -18,17 +18,16 @@ import org.springframework.security.web.SecurityFilterChain;
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-  private final JwtPropertiesService jwtPropertiesService;
-
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     return http.csrf(AbstractHttpConfigurer::disable)
+        .authorizeHttpRequests(configurer -> configurer.anyRequest().permitAll())
         .oauth2ResourceServer(configurer -> configurer.jwt(Customizer.withDefaults()))
         .build();
   }
 
   @Bean
-  public JwtDecoder jwtDecoder() {
+  public JwtDecoder jwtDecoder(JwtPropertiesService jwtPropertiesService) {
     return NimbusJwtDecoder.withSecretKey(jwtPropertiesService.getKey()).build();
   }
 }
