@@ -9,5 +9,5 @@ CREATE TABLE conditions
 SELECT create_hypertable('conditions', by_range('time'));
 
 -- https://docs.timescale.com/use-timescale/latest/schema-management/about-indexing/
-CREATE UNIQUE INDEX ON conditions (company, time DESC);
-CREATE UNIQUE INDEX ON conditions (company, device, time DESC);
+CREATE INDEX ON conditions (company, time DESC);
+CREATE INDEX ON conditions (company, device, time DESC);
