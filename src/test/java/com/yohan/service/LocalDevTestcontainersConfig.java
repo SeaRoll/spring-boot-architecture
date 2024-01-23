@@ -5,6 +5,7 @@ import org.springframework.boot.testcontainers.service.connection.ServiceConnect
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.utility.DockerImageName;
 
 @TestConfiguration(proxyBeanMethods = false)
 public class LocalDevTestcontainersConfig {
@@ -13,6 +14,9 @@ public class LocalDevTestcontainersConfig {
   @ServiceConnection
   PostgreSQLContainer<?> postgreSQLContainer(DynamicPropertyRegistry dynamicPropertyRegistry) {
     dynamicPropertyRegistry.add("app.hello.world", () -> "hello");
-    return new PostgreSQLContainer<>("postgres:14");
+    DockerImageName myImage =
+        DockerImageName.parse("timescale/timescaledb:latest-pg15")
+            .asCompatibleSubstituteFor("postgres");
+    return new PostgreSQLContainer<>(myImage);
   }
 }
