@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/producer")
 @RequiredArgsConstructor
 public class ProducerController {
-  private final Producer producer;
+  private final ProducerService producerService;
 
   @PostMapping
   public void sendToMqtt(@RequestBody String data) {
-    producer.sendToMqtt(data);
+    producerService.sendToMqtt(data);
   }
 }
