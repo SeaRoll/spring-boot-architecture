@@ -1,5 +1,6 @@
 package com.yohan.service;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -10,6 +11,6 @@ class ApplicationTests extends SpringBootComponentTest {
 
   @Test
   void contextLoads() {
-    System.out.println(helloWorld);
+    Assertions.assertFalse(helloWorld.isEmpty());
   }
 }
