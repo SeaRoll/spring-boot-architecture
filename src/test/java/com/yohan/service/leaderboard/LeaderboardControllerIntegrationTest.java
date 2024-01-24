@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.MockMvc;
 
-public class LeaderboardControllerIntegrationTest extends SpringBootComponentTest {
+class LeaderboardControllerIntegrationTest extends SpringBootComponentTest {
 
   @Autowired private MockMvc mockMvc;
   @Autowired LeaderboardEntryRepository repository;
