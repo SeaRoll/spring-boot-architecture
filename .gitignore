@@ -33,6 +33,3 @@ build/
 .vscode/
 
 *.p12
-*.jks
-*.key
-*.pem
