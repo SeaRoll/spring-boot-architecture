@@ -21,6 +21,13 @@ spring:
     client-pem-path: ./client.pem
     client-key-path: ./client_real.key
 
+    # use this for SSL encryption
+    # server:
+    # ssl:
+    # key-store: keystore.p12
+    # key-store-type: PKCS12
+    # key-store-password: testpassword
+
 app:
   jwt:
     key: 5pAq6zRyX8bC3dV2wS7gN1mK9jF0hL4tUoP6iBvE3nG8xZaQrY7cW2fA # according to SHA-256 requirements
