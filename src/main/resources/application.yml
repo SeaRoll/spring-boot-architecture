@@ -15,8 +15,11 @@ spring:
     virtual:
       enabled: true
   mqtt:
-    broker-port: 1883
+    broker-port: 8883
     broker-host: localhost
+    ca-path: ./cacert.pem
+    client-pem-path: ./client.pem
+    client-key-path: ./client_real.key
 
 app:
   jwt:

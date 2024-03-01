@@ -12,7 +12,7 @@ public class ProducerService {
   private final ProducerGateway producerGateway;
 
   public void sendToMqtt(String data) {
-    producerGateway.sendToMqtt(data);
+    producerGateway.sendToMqtt(data, "testTopic");
     log.info("Message sent to MQTT broker: {}", data);
   }
 }
