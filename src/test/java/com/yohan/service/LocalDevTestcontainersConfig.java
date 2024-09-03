@@ -19,6 +19,6 @@ public class LocalDevTestcontainersConfig {
   @Bean
   @ServiceConnection
   KafkaContainer kafkaContainer() {
-    return new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:7.2.2.arm64"));
+    return new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:7.2.2"));
   }
 }
