@@ -26,13 +26,14 @@ spring:
       enable-auto-commit: false
     listener:
       ack-mode: manual_immediate
-
-    # use this for SSL encryption
-    # server:
-    # ssl:
-    # key-store: keystore.p12
-    # key-store-type: PKCS12
-    # key-store-password: testpassword
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: ${OAUTH_GITHUB_CLIENT_ID:GITHUB_CLIENT_ID}
+            clientSecret: ${OAUTH_GITHUB_CLIENT_SECRET:GITHUB_CLIENT_SECRET}
+            scope: read:user,user:email
 
 app:
   jwt:
@@ -40,3 +41,5 @@ app:
     algorithm: HS256
     issuer: http://localhost:8080
     expiresIn: P1D
+
+  fe-base-url: http://localhost:8080
