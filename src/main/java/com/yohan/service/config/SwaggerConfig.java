@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class SwaggerConfig {
+
   @Bean
   public OpenAPI customOpenAPI() {
-
     final var SECURITY_SCHEME_NAME = "security";
 
     return new OpenAPI()

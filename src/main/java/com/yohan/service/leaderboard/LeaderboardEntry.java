@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LeaderboardEntry {
+
   @Id
   @Column(name = "id")
   private String id;

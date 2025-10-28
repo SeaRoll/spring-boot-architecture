@@ -22,7 +22,7 @@ spring:
     consumer:
       group-id: my-group
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       enable-auto-commit: false
     listener:
       ack-mode: manual_immediate
