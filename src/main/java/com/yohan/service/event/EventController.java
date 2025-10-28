@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/event")
 @RequiredArgsConstructor
 public class EventController {
-  private final KafkaTemplate<String, RandomEvent> kafkaTemplate;
+
+  private final KafkaTemplate<String, BaseEvent> kafkaTemplate;
 
   @GetMapping("/send")
   public void send() {
-    kafkaTemplate.send("topic1", new RandomEvent(42));
+    kafkaTemplate.send("topic1", new BaseEvent.NewRandomEvent(42));
   }
 }

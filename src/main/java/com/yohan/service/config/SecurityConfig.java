@@ -39,7 +39,7 @@ public class SecurityConfig {
         .authorizeHttpRequests(configurer -> configurer.anyRequest().permitAll())
         .oauth2ResourceServer(configurer -> configurer.jwt(Customizer.withDefaults()))
         .oauth2Login(
-            (oauth2Login) ->
+            oauth2Login ->
                 oauth2Login
                     .userInfoEndpoint(userInfo -> userInfo.userService(service))
                     .successHandler(successHandler)
