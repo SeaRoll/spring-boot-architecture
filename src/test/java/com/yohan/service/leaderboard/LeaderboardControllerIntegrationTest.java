@@ -15,11 +15,9 @@ import org.springframework.test.web.servlet.MockMvc;
 
 class LeaderboardControllerIntegrationTest extends SpringBootComponentTest {
 
-  @Autowired
-  private MockMvc mockMvc;
+  @Autowired private MockMvc mockMvc;
 
-  @Autowired
-  LeaderboardEntryRepository repository;
+  @Autowired LeaderboardEntryRepository repository;
 
   @AfterEach
   void tearDown() {
@@ -32,10 +30,10 @@ class LeaderboardControllerIntegrationTest extends SpringBootComponentTest {
     repository.saveAll(List.of(entity));
 
     mockMvc
-      .perform(get("/api/v1/leaderboards"))
-      .andExpect(status().isOk())
-      .andExpect(jsonPath("$", hasSize(1)))
-      .andExpect(jsonPath("$.[0].nick", is(entity.getNick())))
-      .andExpect(jsonPath("$.[0].score", is(entity.getScore())));
+        .perform(get("/api/v1/leaderboards"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$", hasSize(1)))
+        .andExpect(jsonPath("$.[0].nick", is(entity.getNick())))
+        .andExpect(jsonPath("$.[0].score", is(entity.getScore())));
   }
 }

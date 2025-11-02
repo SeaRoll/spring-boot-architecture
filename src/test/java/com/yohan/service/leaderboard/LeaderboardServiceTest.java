@@ -14,18 +14,14 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 public class LeaderboardServiceTest {
 
-  @Mock
-  LeaderboardEntryRepository repository;
+  @Mock LeaderboardEntryRepository repository;
 
-  @InjectMocks
-  LeaderboardService service;
+  @InjectMocks LeaderboardService service;
 
   @Test
   void getLeaderboard() {
-    List<LeaderboardEntry> entities = List.of(
-      LeaderboardEntry.of("player1", 300),
-      LeaderboardEntry.of("player2", 200)
-    );
+    List<LeaderboardEntry> entities =
+        List.of(LeaderboardEntry.of("player1", 300), LeaderboardEntry.of("player2", 200));
 
     when(repository.findAll()).thenReturn(new ArrayList<>(entities));
 

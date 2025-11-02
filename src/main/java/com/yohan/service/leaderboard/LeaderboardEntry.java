@@ -31,10 +31,6 @@ public class LeaderboardEntry {
   private Integer score;
 
   public static LeaderboardEntry of(String nick, Integer score) {
-    return LeaderboardEntry.builder()
-      .id(UUID.randomUUID())
-      .nick(nick)
-      .score(score)
-      .build();
+    return LeaderboardEntry.builder().id(UUID.randomUUID()).nick(nick).score(score).build();
   }
 }
