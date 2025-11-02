@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(API_VERSION_1 + "/leaderboard")
+@RequestMapping(API_VERSION_1 + "/leaderboards")
 @RequiredArgsConstructor
 public class LeaderboardController {
+
   private final LeaderboardService service;
 
   @GetMapping
   public List<LeaderboardEntryDto> getLeaderboard() {
-    return service.getListOfAllLeaderboardEntriesAsDTO();
+    return service.getLeaderboardEntries();
   }
 }

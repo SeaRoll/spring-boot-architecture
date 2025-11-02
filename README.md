@@ -27,34 +27,3 @@ automatic local development & testing setup with testcontainers.
 
 * run `./mvnw fmt:format` before pushing
 * run `./mvnw clean verify` before pushing
-
-## Running the application locally
-
-Navigate to the root of test folder,
-And then run the `LocalDevApplication` class.
-This will start all necessary docker containers
-and run the application locally.
-
-## Example of security:
-
-```sh
-curl -s --location "http://localhost:8080/auth/token" \
-> --header "Content-Type: application/json" \
-> --data "{
->     \"sub\": \"123\",
->     \"scope\": [
->         \"role1\",
->         \"role2\",
->         \"GUEST\"
->     ]
-> }"
-
-eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAiLCJzdWIiOiJkbWl0cnkiLCJleHAiOjE3MDM5NTg4MjcsImlhdCI6MTcwMzk1ODIyNywic2NvcGUiOlsicm9sZTEiLCJyb2xlMiIsIkdVRVNUIl19.sgwvUVJazeEdhM1Vy8eXGjvGIXkAYWFfRg_VaNpISdU
-```
-
-```sh
-curl -s --location "http://localhost:8080/greeting" \
---header "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAiLCJzdWIiOiJkbWl0cnkiLCJleHAiOjE3MDM5NTg4MjcsImlhdCI6MTcwMzk1ODIyNywic2NvcGUiOlsicm9sZTEiLCJyb2xlMiIsIkdVRVNUIl19.sgwvUVJazeEdhM1Vy8eXGjvGIXkAYWFfRg_VaNpISdU"
-
-Hello, 123. You have next permissions: [SCOPE_role1, SCOPE_role2, SCOPE_GUEST]
-```
