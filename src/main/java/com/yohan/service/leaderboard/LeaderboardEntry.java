@@ -7,12 +7,11 @@ import jakarta.persistence.Table;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "leaderboard_entry")
-@Data
 @Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,17 +19,18 @@ public class LeaderboardEntry {
 
   @Id
   @Column(name = "id")
-  private String id;
+  @Getter
+  private UUID id;
 
   @Column(name = "nick")
+  @Getter
   private String nick;
 
   @Column(name = "score")
+  @Getter
   private Integer score;
 
-  public LeaderboardEntry(String nick, Integer score) {
-    this.id = UUID.randomUUID().toString();
-    this.nick = nick;
-    this.score = score;
+  public static LeaderboardEntry of(String nick, Integer score) {
+    return LeaderboardEntry.builder().id(UUID.randomUUID()).nick(nick).score(score).build();
   }
 }

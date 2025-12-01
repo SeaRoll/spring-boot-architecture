@@ -21,7 +21,6 @@ class ListenerIntegrationTests extends SpringBootComponentTest {
   void testEventReceived() throws Exception {
     // Call /api/event
     mockMvc.perform(get("/api/event/send")).andExpect(status().isOk());
-    // Verify that the listener's method was called
     doNothing().when(listener).handleNewRandomEvent(any(BaseEvent.NewRandomEvent.class));
   }
 }
